@@ -9,8 +9,6 @@ body {
     position: relative;
 }
 
-
-
 .ariel {
     position: absolute;
     align-items: center;
@@ -46,4 +44,11 @@ body {
     /* 1 ligne */
     grid-gap: 20px;
     /* Espacement entre les items */
+}
+
+h2 {
+font-size: 2em;
+font-weight: bold;
+margin-inline-start: 0px;
+font-family: Arial, Helvetica, sans-serif;
 }
