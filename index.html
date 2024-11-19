@@ -1,48 +1,81 @@
 <!DOCTYPE html>
-<html lang="fr-FR">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projet Drag and Drop</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
+  
+
+
     <section id="s1">
-        <div class="carre draggable"></div>
-        <div class="carre2 draggable"></div>
-        <div class="carre3 draggable"></div>
-    </section>
+
+        <audio id="audioPlayer2" id="audio">
+            <source src="ocean.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
     
-    <section id="s2">
-        
-            <div class="div1"> </div>
-            <div class="div2"> </div>
-            <div class="div3"> </div>
-            <div class="div4"> </div>
-            <div class="div5"> </div>
-            <div class="div6"> </div>
-            <div class="div7"> </div>
-            <div class="div8"> </div>
-            <div class="div9"> </div>
-        
+        <img src="./images/logo.png" alt="Coquillage" id="shell">
+        <h2>Plonge sous l'océan </h2>
+
+        <div class="ariel">
+            <img class="draggable" src="images/ariel.png" alt="">
+        </div>
+        <div class="polochon">
+            <img class="draggable" src="images/polochon.png" alt="">
+        </div>
+        <div class="sebastien">
+            <img class="draggable" src="images/sebastien.png" alt="">
+        </div>
+
     </section>
-    <script src="https://unpkg.com/draggabilly@3/dist/draggabilly.pkgd.min.js"></script>"
+
+    <section id="s2">
+        <div class="div1">
+            <img class="draggable" src="images/img1.png" alt="">
+        </div>
+        <div class="div2">
+            <img class="draggable" src="images/img2.png" alt="">
+        </div>
+        <div class="div3">
+            <img class="draggable" src="images/img3.png" alt="">
+        </div>
+        <div class="div4">
+            <img class="draggable" src="images/img4.png" alt="">
+        </div>
+        <div class="div5">
+            <img class="draggable" src="images/img5.png" alt="">
+        </div>
+        <div class="div6">
+            <img class="draggable" src="images/img6.png" alt="">
+        </div>
+        <div class="div7">
+            <img class="draggable" src="images/img7.png" alt="">
+        </div>
+        <div class="div8">
+            <img class="draggable" src="images/img8.png" alt="">
+        </div>
+        <div class="div9">
+            <img class="draggable" src="images/img9.png" alt="">
+        </div>
+    </section>
+
+    <!-- Draggabilly Script -->
+    <script src="https://unpkg.com/draggabilly@3/dist/draggabilly.pkgd.min.js"></script>
     <script>
         var draggableElems = document.querySelectorAll('.draggable');
-        // array of Draggabillies
-        var draggies = []
-        // init Draggabillies
+        var draggies = [];
         for (var i = 0; i < draggableElems.length; i++) {
             var draggableElem = draggableElems[i];
-            var draggie = new Draggabilly(draggableElem, {
-                // options...
-            });
+            var draggie = new Draggabilly(draggableElem, {});
             draggies.push(draggie);
         }
     </script>
+    <script src="./script.js"></script>
 
 </body>
 
