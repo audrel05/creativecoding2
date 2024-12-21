@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouvelle Page</title>
+    <link rel="stylesheet" href="style.css"> <!-- Lien vers le CSS principal -->
+</head>
+
+<body>
+    <section id="desktop">
+        <!-- Logo -->
+        <img src="./img/typo.png" alt="typo" id="typo">
+
+        <!-- Dossiers -->
+        <img class="draggable" src="img/dossiers/1.png" alt="Dossier 1" onclick="window.location.href='index.html'">
+        <img class="draggable" src="img/stickers/11.png" alt="stickers 11">
+        <img class="draggable" src="img/stickers/12.png" alt="stickers 12">
+        <img class="draggable" src="img/stickers/13.png" alt="stickers 13">
+        <img class="draggable" src="img/stickers/14.png" alt="stickers 14">
+        <img class="draggable" src="img/stickers/15.png" alt="stickers 15">
+        <img class="draggable" src="img/stickers/16.png" alt="stickers 16">
+        <img class="draggable" src="img/stickers/17.png" alt="stickers 17">
+        <img class="draggable" src="img/stickers/18.png" alt="stickers 18">
+
+        <!-- Draggabilly Script -->
+        <script src="https://unpkg.com/draggabilly@3/dist/draggabilly.pkgd.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const draggableElems = document.querySelectorAll('.draggable');
+
+                draggableElems.forEach(draggableElem => {
+                    // Positionnement aléatoire
+                    const randomX = Math.random() * (window.innerWidth - draggableElem.offsetWidth);
+                    const randomY = Math.random() * (window.innerHeight - draggableElem.offsetHeight);
+
+                    draggableElem.style.position = 'absolute';
+                    draggableElem.style.left = `${randomX}px`;
+                    draggableElem.style.top = `${randomY}px`;
+
+                    // Draggable avec Draggabilly
+                    new Draggabilly(draggableElem, {});
+                });
+            });
+        </script>
+    </section>
+
+</html>

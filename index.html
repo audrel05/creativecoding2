@@ -9,73 +9,41 @@
 </head>
 
 <body>
-  
+    <section id="desktop">
+        <!-- Logo -->
+        <img src="./img/typo.png" alt="typo" id="typo">
 
-
-    <section id="s1">
-
-        <audio id="audioPlayer2" id="audio">
-            <source src="ocean.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-    
-        <img src="./images/logo.png" alt="Coquillage" id="shell">
-
-        <div class="ariel">
-            <img class="draggable" src="images/ariel.png" alt="">
-        </div>
-        <div class="polochon">
-            <img class="draggable" src="images/polochon.png" alt="">
-        </div>
-        <div class="sebastien">
-            <img class="draggable" src="images/sebastien.png" alt="">
-        </div>
-
-    </section>
-
-    <section id="s2">
-        <div class="div1">
-            <img class="draggable" src="images/volan.png" alt="">
-        </div>
-        <div class="div2">
-            <img class="draggable" src="images/collier.png" alt="">
-        </div>
-        <div class="div3">
-            <img class="draggable" src="images/parchemin.png" alt="">
-        </div>
-        <div class="div4">
-            <img class="draggable" src="images/poisson g.png" alt="">
-        </div>
-        <div class="div5">
-            <img class="draggable" src="images/ursula.png" alt="">
-        </div>
-        <div class="div6">
-            <img class="draggable" src="images/poisson d.png" alt="">
-        </div>
-        <div class="div7">
-            <img class="draggable" src="images/fourchette.png" alt="">
-        </div>
-        <div class="div8">
-            <img class="draggable" src="images/algues.png" alt="">
-        </div>
-        <div class="div9">
-            <img class="draggable" src="images/chaussure.png" alt="">
-        </div>
+        <!-- Dossiers -->
+        <img class="draggable" src="img/dossiers/1.png" alt="Dossier 1" onclick="window.location.href='page1.html'">
+        <img class="draggable" src="img/dossiers/2.png" alt="Dossier 2">
+        <img class="draggable" src="img/dossiers/3.png" alt="Dossier 3">
+        <img class="draggable" src="img/dossiers/4.png" alt="Dossier 4">
+        <img class="draggable" src="img/dossiers/5.png" alt="Dossier 5">
+        <img class="draggable" src="img/stickers/chatpixs.png" alt="chatpixs">
+        <img class="draggable" src="img/stickers/macpixs.png" alt="macpixs">
+        <img class="draggable" src="img/stickers/foodpixs.png" alt="foodpixs">
     </section>
 
     <!-- Draggabilly Script -->
     <script src="https://unpkg.com/draggabilly@3/dist/draggabilly.pkgd.min.js"></script>
     <script>
-        var draggableElems = document.querySelectorAll('.draggable');
-        var draggies = [];
-        for (var i = 0; i < draggableElems.length; i++) {
-            var draggableElem = draggableElems[i];
-            var draggie = new Draggabilly(draggableElem, {});
-            draggies.push(draggie);
-        }
-    </script>
-    <script src="./script.js"></script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const draggableElems = document.querySelectorAll('.draggable');
 
+            draggableElems.forEach(draggableElem => {
+                // Positionnement aléatoire
+                const randomX = Math.random() * (window.innerWidth - draggableElem.offsetWidth);
+                const randomY = Math.random() * (window.innerHeight - draggableElem.offsetHeight);
+
+                draggableElem.style.position = 'absolute';
+                draggableElem.style.left = `${randomX}px`;
+                draggableElem.style.top = `${randomY}px`;
+
+                // Draggable avec Draggabilly
+                new Draggabilly(draggableElem, {});
+            });
+        });
+    </script>
 </body>
 
 </html>
