@@ -2,7 +2,7 @@ body {
     margin: 0;
     overflow: hidden;
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0; /* Couleur de fond aesthetic */
+    background-color: #f0f0f0; 
 }
 
 #desktop {
@@ -39,13 +39,11 @@ body {
 }
 
 #typo {
-    position: absolute; /* Pour le positionner précisément */
-    top: 15px; /* Distance par rapport au haut de la page */
-    left: 15px; /* Distance par rapport au bord gauche */
-    width: 50%; /* Réduit la taille à 80% de sa taille originale */
-    max-width: 400px; /* Facultatif : Limite la taille maximale */
-    height: auto; /* Maintient le ratio de l'image */
+    position: absolute; 
+    top: 15px; 
+    left: 15px; 
+    width: 50%; 
+    max-width: 400px; 
+    height: auto; 
 }
-
-
 
