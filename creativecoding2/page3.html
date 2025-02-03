@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood3</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+
+<body>
+    <section id="desktop">
+        <img src="./image/typo.png" alt="typo" id="typo" onclick="window.location.href='index.html'">
+
+        <img src="image/stickers/CD.gif" alt="GIF animé" class="gif-top-right" id="cd-button">
+
+        <img class="draggable" src="image/dossiers/3.png" alt="Dossier 3" onclick="window.location.href='intro.html'">
+        <img class="draggable" src="image/stickers/chatpixs.png" alt="chatpixs">
+        <img class="draggable" src="image/stickers/bleu1.png" alt="bleu1">
+        <img class="draggable" src="image/stickers/marron.png" alt="marron">
+        <img class="draggable" src="image/stickers/gris.png" alt="gris">
+        <img class="draggable" src="image/stickers/chat.png" alt="chat">
+        <img class="draggable" src="image/stickers/bleu.png" alt="bleu">
+        <img class="draggable" src="image/stickers/orange.png" alt="orange">
+
+        <audio id="background-music" loop>
+            <source src="musique/Taylor Swift.mp3" type="audio/mpeg">
+        </audio>
+   
+        <script src="https://unpkg.com/draggabilly@3/dist/draggabilly.pkgd.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const draggableElems = document.querySelectorAll('.draggable');
+
+                draggableElems.forEach(draggableElem => {
+                    const randomX = Math.random() * (window.innerWidth - draggableElem.offsetWidth);
+                    const randomY = Math.random() * (window.innerHeight - draggableElem.offsetHeight);
+
+                    draggableElem.style.position = 'absolute';
+                    draggableElem.style.left = `${randomX}px`;
+                    draggableElem.style.top = `${randomY}px`;
+
+                    new Draggabilly(draggableElem, {});
+                });
+                 const audio = document.getElementById("background-music");
+                const cdButton = document.getElementById("cd-button");
+
+                cdButton.addEventListener("click", function () {
+                    if (audio.paused) {
+                        audio.play();
+                    } else {
+                        audio.pause();
+                    }
+                });
+            });
+        </script>
+    </section>
+
+</html>

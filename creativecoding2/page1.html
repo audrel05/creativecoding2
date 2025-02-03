@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section id="desktop">
+        <img src="./image/typo.png" alt="typo" id="typo" onclick="window.location.href='index.html'">
+
+        <img src="image/stickers/CD.gif" alt="GIF animé" class="gif-top-right" id="cd-button">
+
+        <img class="draggable" src="image/dossiers/1.png" alt="Dossier 1" onclick="window.location.href='intro.html'">
+        <img class="draggable" src="image/stickers/macpixs.png" alt="macpixs">
+        <img class="draggable" src="image/stickers/11.png" alt="stickers 11">
+        <img class="draggable" src="image/stickers/12.png" alt="stickers 12">
+        <img class="draggable" src="image/stickers/13.png" alt="stickers 13">
+        <img class="draggable" src="image/stickers/14.png" alt="stickers 14">
+        <img class="draggable" src="image/stickers/15.png" alt="stickers 15">
+        <img class="draggable" src="image/stickers/16.png" alt="stickers 16">
+        <img class="draggable" src="image/stickers/17.png" alt="stickers 17">
+        <img class="draggable" src="image/stickers/18.png" alt="stickers 18">
+
+        <audio id="background-music" loop>
+            <source src="musique/BadBunny.mp3" type="audio/mpeg">
+        </audio>
+
+        <script src="https://unpkg.com/draggabilly@3/dist/draggabilly.pkgd.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const draggableElems = document.querySelectorAll('.draggable');
+
+                draggableElems.forEach(draggableElem => {
+                    const randomX = Math.random() * (window.innerWidth - draggableElem.offsetWidth);
+                    const randomY = Math.random() * (window.innerHeight - draggableElem.offsetHeight);
+
+                    draggableElem.style.position = 'absolute';
+                    draggableElem.style.left = `${randomX}px`;
+                    draggableElem.style.top = `${randomY}px`;
+
+                    new Draggabilly(draggableElem, {});
+                });
+
+                const audio = document.getElementById("background-music");
+                const cdButton = document.getElementById("cd-button");
+
+                cdButton.addEventListener("click", function () {
+                    if (audio.paused) {
+                        audio.play();
+                    } else {
+                        audio.pause();
+                    }
+                });
+            });
+        </script>
+    </section>
+</body>
+
+</html>
